@@ -101,38 +101,44 @@ export default function Home() {
 
   if (showSuccess) {
     return (
-      <div className="container">
-        <div className="success-screen">
-          <div className="success-icon">✓</div>
-          <h2>EPUB Downloaded Successfully!</h2>
-          <div className="kindle-instructions">
-            <h3>Get it to your Kindle:</h3>
-            <p>
-              <strong>Option 1: Email to Kindle</strong><br />
-              Send an email with the EPUB file attached to your Kindle email address.
-              Your Kindle has its own email, e.g. if your Amazon username is bob,
-              then your Kindle email is something like <code>bob_432435@kindle.com</code>.
-              You can find this email in your Kindle app settings.
-            </p>
-            <p>
-              <strong>Option 2: Use Kindle App</strong><br />
-              Open the Kindle app on your device and add the downloaded EPUB file directly.
-            </p>
+      <div className="page-wrapper">
+        <div className="container">
+          <div className="success-screen">
+            <div className="success-icon">✓</div>
+            <h2>EPUB Downloaded Successfully!</h2>
+            <div className="kindle-instructions">
+              <h3>Get it to your Kindle:</h3>
+              <p>
+                <strong>Option 1: Email to Kindle</strong><br />
+                Send an email with the EPUB file attached to your Kindle email address.
+                Your Kindle has its own email, e.g. if your Amazon username is bob,
+                then your Kindle email is something like <code>bob_432435@kindle.com</code>.
+                You can find this email in your Kindle app settings.
+              </p>
+              <p>
+                <strong>Option 2: Use Kindle App</strong><br />
+                Open the Kindle app on your device and add the downloaded EPUB file directly.
+              </p>
+            </div>
+            <button className="convert-another-btn" onClick={handleConvertAnother}>
+              Convert Another Document
+            </button>
           </div>
-          <button className="convert-another-btn" onClick={handleConvertAnother}>
-            Convert Another Document
-          </button>
+        </div>
+        <div className="footer">
+          Made with ❤️ by Claude and <a href="https://github.com/kmrasmussen" target="_blank" rel="noopener noreferrer">Kasper</a>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="container">
-      <h1>Kindlify</h1>
-      <p className="subtitle">Convert any document to EPUB ebook format (works for Kindle)</p>
+    <div className="page-wrapper">
+      <div className="container">
+        <h1>Kindlify</h1>
+        <p className="subtitle">Convert any document to EPUB ebook format (works for Kindle)</p>
 
-      <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Input Method</label>
           <div className="toggle-group">
@@ -189,12 +195,17 @@ export default function Home() {
         </button>
       </form>
 
-      {status && (
-        <div className={`status ${status.type}`}>
-          {status.type === 'loading' && <span className="spinner" />}
-          {status.message}
-        </div>
-      )}
+        {status && (
+          <div className={`status ${status.type}`}>
+            {status.type === 'loading' && <span className="spinner" />}
+            {status.message}
+          </div>
+        )}
+      </div>
+
+      <div className="footer">
+        Made with ❤️ by Claude and <a href="https://github.com/kmrasmussen" target="_blank" rel="noopener noreferrer">Kasper</a>
+      </div>
     </div>
   );
 }

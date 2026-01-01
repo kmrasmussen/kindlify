@@ -24,12 +24,19 @@ body {
   padding: 20px;
 }
 
+.page-wrapper {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .container {
   background: white;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
   width: 100%;
 }
 
@@ -253,6 +260,25 @@ button:disabled {
   box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
 }
 
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s;
+}
+
+.footer a:hover {
+  color: white;
+  border-bottom-color: white;
+}
+
 .spinner {
   display: inline-block;
   width: 14px;
@@ -367,5 +393,10 @@ button:disabled {
   .convert-another-btn {
     padding: 14px;
     font-size: 16px;
+  }
+
+  .footer {
+    margin-top: 16px;
+    font-size: 12px;
   }
 }
